@@ -60,7 +60,37 @@ public class WalkStep {
 
 
     }
+    
+    
+    /**
+    * @auther  leichunhong
+    * @desc 走台阶第二遍
+    * @date  2020-06-13 20:51  
+    * @param   
+    * @return  
+    */
+    public int climbStairs2(int n) {
+        //1 返回1
+       if(n==1){
+           return 1;
+
+       }
+       //定义第一步
+       int first=1;
+       //定义第二部
+       int second=2;
+       //三步以上每步替换
+       for(int i=3;i<=n;i++){
+           int third=first+second;
+           first=second;
+           second=third;
+
+       }
+       return second;
+
+    }
 
 
-}
+
+    }
 

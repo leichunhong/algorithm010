@@ -37,11 +37,26 @@ prepend O(1)
  1. 有暴力的思路没
  2. 化繁为简，列举法
  3. 找最近重复子问题
- 4. 算法只能  if else loop while 
+ 4. 算法只能  if else loop while 往这方面考，
  
  # java搜索api/下载源码
  1. xx java 8 xx代表搜索的内容  8代表具体版本号
  2. java source code
+ 
+ #  队列源码分析 QUEUE
+ 1. queue是个接口
+ 2. 超类是Collection,Iterable
+ 3. 子接口：BlockingDeque：双端队列线程安全阻塞，BlockingQueue：阻塞队列，Deque：双端队列 ，TransferQueue 
+ 4. 插入方法  add()返回异常, offer() 返回特殊值null或者false
+ 5. 移除头部元素：remove()为null移除报异常，poll()对列为null移除返回null或者false
+ 6. element()返回队列的头，队列为空抛出异常，和poll检查不移除元素返回队列的头，队列为null返回空。
+ 
+ 
+ # 优先级队列PriorityQueue 
+ 1 下次补充 主要是掌握怎么看源码的方法 PriorityQueue java 8
+ 
+ 
+ 
  
  
  

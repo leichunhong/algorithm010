@@ -46,8 +46,30 @@ public class MostWater {
         }
         return max;
 
+    }
+
+    /**
+    * @auther  leichunhong
+    * @desc 最多的水第三遍
+    * @date  2020-06-13 21:33
+    * @param
+    * @return  int
+    */
+    public static int maxArea3(int a[]) {
+
+        int max=0;
+        //两端往中间找
+        for(int i=0,j=a.length-1;i<j;){
+            int min=a[i]<a[j]?a[i++]:a[j--];
+            max=Math.max(max,(j-i+1)*min);
+        }
+        return max;
 
     }
+
+
+
+
 
 
     }

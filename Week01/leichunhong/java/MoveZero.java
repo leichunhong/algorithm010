@@ -135,6 +135,34 @@ public class MoveZero {
         }
 
     }
+    /**
+    * @auther  leichunhong
+    * @desc 去掉0 第五遍 能写出来！
+    * @date  2020-06-13 21:10  
+    * @param  [nums] 
+    * @return  void
+    */
+    public static void moveZeroes5(int[] nums) {
+        //定义 j
+        int j=0;
+        for (int num : nums) {
+            if(num!=0){
+                nums[j]=num;
+                j++;
+
+            }
+
+        }
+
+        for(int i=j;j<nums.length;j++){
+            nums[i]=0;
+        }
+
+        
+    }
+
+
+
 
 
 

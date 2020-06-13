@@ -103,6 +103,76 @@ public class ThreeSum {
         return ans;
     }
 
+
+
+
+
+
+
+        /**
+        * @auther  leichunhong
+        * @desc 三数之和第二遍  默写有点困难  还要加油！！
+        * @date  2020-06-13 20:54
+        * @param
+        * @return  void
+        */
+
+        public static List<List<Integer>> threeSum2(int[] nums) {
+            //1.创建返回对象
+            List<List<Integer>> array=new ArrayList<>();
+            int len=nums.length;
+
+            //2.小与3返回
+            if(nums==null&&len<3){
+                return array;
+            }
+
+
+            //排序
+            Arrays.sort(nums);
+            //循环 循环nums[i]
+            for(int i=0;i<len;i++){
+                 //大于0跳出去
+                if(nums[i]>0){
+                    break;
+                }
+                //去重下一个循环
+                if(i>0&&nums[i]==nums[i-1]){
+                    continue;
+                }
+                //定义左右 起点
+                int l=i+1;
+                int r=len-1;
+                //只要小与都循环
+                while(l<r){
+                    //算和
+                    int sum=nums[i]+nums[l]+nums[r];
+                    //==0
+                    if(sum==0){
+                        array.add(Arrays.asList(nums[i],nums[l],nums[r]));
+                        while(l<r&&nums[l]==nums[l+1]){
+                            l++;
+                        }
+                        while(l<r&&nums[r]==nums[r-1]){
+                            r--;
+                        }
+                        l++;
+                        r--;
+                    }else if(sum<0){
+                        l++;
+
+                    }else if(sum>0){
+                        r--;
+                    }
+
+                }
+
+            }
+            return array;
+
+
+        }
+
     public static void main(String[] args) {
         int[]  a=new int[]{1,-3,3,0,5};
         System.out.println(threeSum1(a));
