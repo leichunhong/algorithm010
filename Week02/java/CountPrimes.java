@@ -111,6 +111,7 @@ public class CountPrimes {
 
     }
 
+
     public static void main(String[] args) {
         countPrimes2(100);
     }
