@@ -6,13 +6,30 @@ import java.util.*;
  * 〈功能简述〉<br>
  * 〈〉
  * 三数之和
+ * 步骤：1.定义返回数组List<List<Integer>>
+ *      2.判断list为空和list.sise<3退出
+ *      3.Array.sort(nums)
+ *      4.双层循环 外层循环1=0 到length-1
+ *        5.判断i>0 break;
+ *        6.i>0判断重复i和i-1重复continue
+ *        7.定义左index l和右index r
+ *        8.循环l到r往中间找 while(l<r)
+ *        9.真正算sum=nums[i]+nums[l]+nums[r]
+ *        10.if(sum==0)
+ *          11.返回数组ans.add(Array.aslist(nums[i]+nums[l]+nums[r]))
+ *          12.l和r靠近中去重while(l<r&&nums[l]==nums[l+1]) l++
+ *          13.l和r靠近中去重while(l<r&&nums[r]==nums[r-1]) r--
+ *          14.l++;r--;
+ *        15.else(sum<0) l++
+ *        16.else(sum>0) r--
+ *      17.return ans数组
  * @author leichunhong
  * @create 2020-06-12
  * @since 1.0.0
  */
 public class ThreeSum {
     /**
-     * @param [nums]
+     * @param
      * @return java.util.List<java.util.List < java.lang.Integer>>
      * @auther leichunhong
      * @desc 先暴力一下
@@ -179,4 +196,70 @@ public class ThreeSum {
     }
 
 
-}
+    /**
+     * 〈功能简述〉<br>
+     * 〈〉
+     * 三数之和
+     * 步骤：1.定义返回数组List<List<Integer>>
+     *      2.判断list为空和list.sise<3退出
+     *      3.Array.sort(nums)
+     *      4.双层循环 外层循环1=0 到length-1
+     *        5.判断i>0 break;
+     *        6.i>0判断重复i和i-1重复continue
+     *        7.定义左index l和右index r
+     *        8.循环l到r往中间找 while(l<r)
+     *        9.真正算sum=nums[i]+nums[l]+nums[r]
+     *        10.if(sum==0)
+     *          11.返回数组ans.add(Array.aslist(nums[i]+nums[l]+nums[r]))
+     *          12.l和r靠近中去重while(l<r&&nums[l]==nums[l+1]) l++
+     *          13.l和r靠近中去重while(l<r&&nums[r]==nums[r-1]) r--
+     *          14.l++;r--;
+     *        15.else(sum<0) l++
+     *        16.else(sum>0) r--
+     *      17.return ans数组
+     * @author leichunhong
+     * @create 2020-06-12
+     * @since 1.0.0
+     */
+    public static List<List<Integer>> threeSum3(int[] nums) {
+        List<List<Integer>> ans =new ArrayList<>();
+        if(nums==null||nums.length<3){
+            return ans;
+        }
+        Arrays.sort(nums);
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>0){
+                break;
+            }
+            if(i>0&&nums[i]==nums[i+1]){
+                continue;
+            }
+            int l=i+1;
+            int r=nums.length-1;
+            while(l<r){
+               int sum=nums[i]+nums[l]+nums[r];
+               if(sum==0){
+                   ans.add(Arrays.asList(nums[i],nums[l],nums[r]));
+                   while(l<r&&nums[l]==nums[l++]){
+                       l++;
+                   }
+                   while(l<r&&nums[r]==nums[r--]){
+                       r--;
+                   }
+                   l++;
+                   r--;
+               }else if(sum<0){
+                   l++;
+               }else if(sum>0){
+                   r--;
+               }
+
+            }
+
+        }
+        return ans;
+    }
+
+
+
+    }

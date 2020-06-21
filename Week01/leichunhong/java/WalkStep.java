@@ -4,6 +4,8 @@ package Week01.leichunhong.java;
  * 〈功能简述〉<br>
  * 〈〉
  * 上台阶问题 ：思路 无，这什么东西 ，从下往上走也太难了，老师的思维说倒着想
+ * 步骤：递归三个数换  ==1 return 1  fi=1 se=2 for(3;length)  thir=fi+se; fi=se;se=thir  return se;
+ *
  *
  * @author leichunhong
  * @create 2020-06-11

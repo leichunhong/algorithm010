@@ -6,6 +6,11 @@ import Week01.leichunhong.dto.ListNode;
  * 〈功能简述〉<br>
  * 〈〉
  * 合并有序链表
+ * 步骤：1 两个队列有一个为空就为空
+ *      2.当l1的val<l2的val
+ *      3.l1.next=递归自己(l1.next,l2) return l1
+ *      4.else情况l2.next=递归自己(l1,l2.next) return l2
+ *
  *
  * @author leichunhong
  * @create 2020-06-14

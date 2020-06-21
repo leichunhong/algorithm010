@@ -5,7 +5,9 @@ import java.util.Arrays;
 /**
  * 〈功能简述〉<br>
  * 〈〉思路：非0向前移动没问题，最后一步把0换到后面去有点没搞懂
- *
+ *     步骤：1.定义j=0
+ *          2.循环整个数组当value!=0 让a[j]=a[i] j++
+ *          3.再循环一遍从j=i 到nums.lengtg 把后面的值设置为0
  * @author leichunhong
  * @create 2020-06-09
  * @since 1.0.0

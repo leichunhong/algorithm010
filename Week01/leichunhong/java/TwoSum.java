@@ -10,6 +10,9 @@ import java.util.Map;
  *
  * @author leichunhong
  * @create 2020-06-14
+ * 步骤：1.定义返回数组map<Integer,Integer>
+ *      2.循环数组 先暴力往map添加key=nums[i] 和valus=i
+ *      3.在循环里面 put上面处理 if(map.containsKey(tag-nums[i])) return
  * @since 1.0.0
  */
 public class TwoSum {
@@ -38,7 +41,7 @@ public class TwoSum {
     /**
     * @auther  leichunhong
     * @desc 哈希映射
-    * @date  2020-06-14 20:46  
+    * @date  2020-06-15 12:34
     * @param  [nums, target] 
     * @return  int[]
     */
