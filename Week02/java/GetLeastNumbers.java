@@ -76,6 +76,8 @@ public class GetLeastNumbers {
      * @return void
      * @auther leichunhong
      * @desc 看老师的写法
+     *      步骤：1.循环队列add    add
+     *           2.循环前k个出队列 poll
      * @date 2020-06-21 12:56
      */
     public int[] getLeastNumbers1(int[] arr, int k) {
