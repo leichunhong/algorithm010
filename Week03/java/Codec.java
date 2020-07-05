@@ -1,6 +1,5 @@
 package Week03.java;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -114,7 +113,7 @@ public class Codec {
      * @param [x]
      * @return int
      * @auther leichunhong
-     * @desc 思路：1.当x不等于0的实惠while    最后一位 tail=x%10;位数=result*10 +tail
+     * @desc 思路：1.当x不等于0的while    最后一位 tail=x%10;位数=result*10 +tail
      * 2.当(位数-tail)/10!=result 则移除
      * 3.让result=位数
      * 4.x=x/10

@@ -35,24 +35,14 @@ public class GenerateParenthesis {
     private static  void dns(String s, int left, int right, int n) {
 
         if (left == n && right == n) {
-            System.out.println("left:"+left);
-            System.out.println("right:"+right);
-
             ans.add(s);
             return;
         }
         if (left < n) {
-            System.out.println("left:"+left);
-            System.out.println("right:"+right);
             dns(s+"(", left + 1, right, n);
-
-
         }
         if (right < left) {
-            System.out.println("left:"+left);
-            System.out.println("right:"+right);
             dns(s+")", left, right + 1, n);
-
         }
 
 
