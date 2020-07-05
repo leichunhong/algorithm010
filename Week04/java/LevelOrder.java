@@ -8,8 +8,8 @@ import java.util.Queue;
 /**
  * 〈功能简述〉<br>
  * 〈〉
- *
- *    * @desc 自己写了一遍 有点问题
+ *  102. 二叉树的层序遍历
+ *  自己写了一遍 有点问题
  *  步骤：
  *  1.广度优先就是一层一层的来，怎么保证每层不受干扰，就是先把第一层放到队列里面，
  *  2.这一次不是空的时候，循环这一次从队列中依次取出来，比如第一层是3  把3出队列 那第一次循环是3 把3放到list，然后把左9和右20都加到队列
@@ -35,18 +35,6 @@ public class LevelOrder {
 
     static  List<List<Integer>> ans = new ArrayList<>();
 
-    /**
-     * @param
-     * @return java.util.List<java.util.List < java.lang.Integer>>
-     * @auther leichunhong
-     * @desc 自己写了一遍 有点问题
-     *       在理解下：1.广度优先就是一层一层的来，怎么保证每层不受干扰，就是先把第一层放到队列里面，
-     *                2.这一次不是空的时候，循环这一次从队列中依次取出来，比如第一层是3  把3出队列 那第一次循环是3 把3放到list，然后把左9和右20都加到队列
-     *                3.循环第二次 队列中只有第二次加的 就是两个数 9和20 依次往下 知道为节点为null
-     *                4.以前有点懵这不就是开发中模块下对菜单，菜单下再分菜单，只不过开发中是id和pid关联的。每一层菜单放到队列里使用，使用完出队列。在把下次的放进去
-     *                  下次的就是left和right 这就是所谓的广度优先 一层一层来
-     * @date 2020-07-01 09:05
-     */
     public static List<List<Integer>> levelOrder(TreeNode root) {
         //判断
         if (root == null) {
