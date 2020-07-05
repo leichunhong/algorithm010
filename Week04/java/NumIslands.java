@@ -38,7 +38,7 @@ public class NumIslands {
 
     private void dfs(char[][] grid, int i, int j, int n, int sz) {
 
-        if (i < 0 || j < 0 || i >= grid.length || j >= sz || grid[i][j] == '0') {
+        if (i < 0 || j < 0 || i >= n || j >= sz || grid[i][j] == '0') {
             return;
         }
         //夷为平地 为0
