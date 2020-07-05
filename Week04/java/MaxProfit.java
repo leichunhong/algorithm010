@@ -130,7 +130,7 @@ public class MaxProfit {
      * @param [prices]
      * @return int
      * @auther leichunhong
-     * @desc 写第二遍 贪心算法
+     * @desc 写第二遍 贪心算法  买卖股票的最佳时机 II
      * @date 2020-07-05 20:21
      */
     public int maxProfitII2(int[] prices) {
@@ -146,5 +146,25 @@ public class MaxProfit {
         return max;
     }
 
+    /**
+     * @param
+     * @return int
+     * @auther leichunhong
+     * @desc 309. 最佳买卖股票时机含冷冻期
+     * @date 2020-07-05 20:55
+     */
+    public int maxProfitIII(int[] prices) {
+        int n = prices.length;
+        int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
+        int dp_pre_0 = 0; // 代表 dp[i-2][0]
+        for (int i = 0; i < n; i++) {
+            int temp = dp_i_0;
+            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
+            dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]);
+            dp_pre_0 = temp;
+        }
+        return dp_i_0;
 
+
+    }
 }
