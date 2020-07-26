@@ -27,7 +27,7 @@ public class Enumerate {
             int size = res.size();
 
             //循环每次返回的值就是添加的值
-            for (int i = 0; i < (int) res.size(); i++) {
+            for (int i = 0; i < size; i++) {
                 //每拿出来一个 把当前元素新增进去
                 List<Integer> newAns = new ArrayList<Integer>(res.get(i));
                 newAns.add(n);

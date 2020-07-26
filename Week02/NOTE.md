@@ -21,5 +21,26 @@
 3. 下周放假记得过遍数题。
 
 
-
-
+# 纠正一个写法 
+1. 自己写Array老想着add 数组只能nums[i]=value 赋值
+2. 再确认做题步骤，五分钟没思路 看经典题解
+3. 看完题解读懂解题步骤，除非看不懂才能照着写，看得懂自己先写下思路就是做题步骤。
+4. 然后自己打开intelliJ 按自己的步骤默写不能看题解。
+## 动态规划
+    
+    int fib(int N) {
+        if (N < 1) return 0;
+        // 备忘录全初始化为 0
+        vector<int> memo(N + 1, 0);
+        // 进行带备忘录的递归
+        return helper(memo, N);
+    }
+    
+    int helper(vector<int>& memo, int n) {
+        // base case 
+        if (n == 1 || n == 2) return 1;
+        // 已经计算过
+        if (memo[n] != 0) return memo[n];
+        memo[n] = helper(memo, n - 1) + helper(memo, n - 2);
+        return memo[n];
+    }

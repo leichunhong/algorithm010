@@ -16,11 +16,10 @@ public class LadderLength {
      * @return int
      * @auther leichunhong
      * @desc 先写个广度优先的模板  这个题不是很好写
-     *       步骤：1.大方向 bfs   先套模板   模板套到循环取队列中的单词 下面需要 再循环单词的每个char  然后再循环26个字母依次换掉
-     *             单词的char 然后就是新的单词，再判断这个单词在不在字典中，再判断是不是最终单词是直接返回，再判断访问没访问过，没访问过直接放到访问集合和队列
-     *            2.这次注释写在代码里面。
-     *            双向的bfs下来研究
-     *
+     * 步骤：1.大方向 bfs   先套模板   模板套到循环取队列中的单词 下面需要 再循环单词的每个char  然后再循环26个字母依次换掉
+     * 单词的char 然后就是新的单词，再判断这个单词在不在字典中，再判断是不是最终单词是直接返回，再判断访问没访问过，没访问过直接放到访问集合和队列
+     * 2.这次注释写在代码里面。
+     * 双向的bfs下来研究
      * @date 2020-07-05 15:14
      */
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -93,4 +92,59 @@ public class LadderLength {
         return 0;
 
     }
+
+    public int ladderLength1(String beginWord, String endWord, List<String> wordList) {
+        Set<String> wordSet = new HashSet<>(wordList);
+        if (!wordSet.contains(endWord)) {
+            return 0;
+        }
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+
+        Set<String> visited = new HashSet<>();
+        visited.add(beginWord);
+        int step = 1;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            //循环队列
+            for (int i = 0; i < size; i++) {
+                String str = queue.poll();
+
+                char[] chars = str.toCharArray();
+                //循环字符
+                for (int j = 0; j < str.length(); j++) {
+
+                    char characters = chars[j];
+                    //循环26字母
+                    for (char k = 'a'; k <= 'z'; k++) {
+                        if (characters == k) {
+                            continue;
+                        }
+                        chars[j] = k;
+                        String newWord = String.valueOf(chars);
+
+                        if (wordSet.contains(newWord)) {
+                            if (endWord.equals(newWord)) {
+                                return step + 1;
+                            }
+                            if (!visited.contains(newWord)) {
+                                queue.offer(newWord);
+                                visited.add(newWord);
+                            }
+
+                        }
+
+                    }
+                    //还到最初的字符
+                    chars[j] = characters;
+                }
+            }
+            step++;
+        }
+
+
+        return 0;
+    }
+
 }

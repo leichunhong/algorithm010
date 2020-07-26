@@ -148,10 +148,8 @@ public class Codec {
         StringBuffer sb = new StringBuffer();
         sb.append(str);
         String newStr = sb.reverse().toString();
-
         if (str.equals(newStr)) {
             return true;
-
         }
         return false;
     }

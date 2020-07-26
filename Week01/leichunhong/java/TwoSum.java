@@ -42,7 +42,7 @@ public class TwoSum {
     * @auther  leichunhong
     * @desc 哈希映射
     * @date  2020-06-15 12:34
-    * @param  [nums, target] 
+    * @param
     * @return  int[]
     */
     public static int[] twoSum1(int[] nums, int target) {
@@ -57,6 +57,19 @@ public class TwoSum {
         }
         return nums;
 
+    }
+
+
+    public static int[] twoSum2(int[] nums, int target) {
+       Map<Integer,Integer> map=new HashMap<>();
+       for(int i=0;i<nums.length;i++){
+           if(map.containsKey(target-nums[i])){
+               return new int[]{map.get(target-nums[i]),i};
+           }
+           map.put(nums[i],i);
+
+       }
+       return nums;
     }
 
 

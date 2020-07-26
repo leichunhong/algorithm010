@@ -3,7 +3,7 @@ package Week06.java;
 /**
  * 〈功能简述〉<br>
  * 〈〉
- * 62. 不同路径
+ * 62.最小路径
  *
  * @author leichunhong
  * @create 2020-07-14
@@ -109,6 +109,22 @@ public class UniquePaths {
         }
         //长度是你最好一个格子就是n-1
         return db[n-1];
+    }
+
+
+    public static int uniquePathsII(int m, int n) {
+        int[] db=new int[n];
+        for(int i=0;i<n;i++){
+            db[i]=1;
+        }
+        for(int i=1;i<m;i++){
+            for(int j=1;j<n;j++){
+                db[j]=db[j]+db[j-1];
+
+            }
+        }
+        return db[n-1];
+
     }
 
     public static void main(String[] args) {

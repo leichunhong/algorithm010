@@ -213,7 +213,7 @@ public class WalkStep {
     private static int lo, maxLen;
     /**
     * @auther  leichunhong
-    * @desc  最长回文串
+    * @desc  5. 最长回文子串
     * @date  2020-06-29 09:22
     * @param  [s] 
     * @return  java.lang.String

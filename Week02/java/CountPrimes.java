@@ -111,8 +111,33 @@ public class CountPrimes {
 
     }
 
+    /**
+    * @auther  leichunhong
+    * @desc 第三遍
+    * @date  2020-07-06 10:07
+    * @param  [n] 
+    * @return  int
+    */
+    public static int countPrimes3(int n) {
+        boolean[] bn=new boolean[n];
+        int count=0;
+        for(int i=2;i<n;i++){
+            if(bn[i]==false){
+                count++;
+                for(int j=2;i*j<n;j++){
+                    bn[i*j]=true;
+                }
 
-    public static void main(String[] args) {
+            }
+
+        }
+        return count;
+
+    }
+
+
+
+        public static void main(String[] args) {
         countPrimes2(100);
     }
 

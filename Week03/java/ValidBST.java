@@ -1,8 +1,6 @@
 package Week03.java;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 〈功能简述〉<br>
@@ -92,18 +90,49 @@ public class ValidBST {
 
     }
 
+   /**
+   * @auther  leichunhong
+   * @desc 110. 平衡二叉树
+   * @date  2020-07-26 15:56  
+   * @param  [root] 
+   * @return  boolean
+   */
+    public static boolean isBalanced(TreeNode root) {
+       return dfs(root)!=-1;
+
+    }
+
+    private static int dfs(TreeNode root) {
+        if(root==null){
+            return 0;
+
+        }
+        int left =dfs(root.left);
+        if(left==-1){
+            return -1;
+        }
+        int right=dfs(root.right);
+        if(right==-1){
+            return -1;
+        }
+        return Math.abs(left-right)<2?Math.max(left,right)+1:-1;
+
+
+    }
+
+
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(1);
-        TreeNode left = new TreeNode(2);
-        TreeNode right = new TreeNode(3);
+        TreeNode root = new TreeNode(3);
+        TreeNode left = new TreeNode(9);
+        TreeNode right = new TreeNode(20);
 
 
-        TreeNode left1 = new TreeNode(6);
+        TreeNode left1 = new TreeNode(15);
         TreeNode right2 = new TreeNode(7);
 
 
-        TreeNode left3 = new TreeNode(4);
+       /* TreeNode left3 = new TreeNode(4);
         TreeNode right4 = new TreeNode(5);
 
 
@@ -112,26 +141,15 @@ public class ValidBST {
 
 
         TreeNode left7 = new TreeNode(11);
-        TreeNode right8 = new TreeNode(10);
+        TreeNode right8 = new TreeNode(10);*/
 
 
         root.right = right;
         root.left = left;
         right.left = left1;
         right.right = right2;
-        left.left = left3;
-        left.right = right4;
 
-        left3.left = left5;
-
-        left3.right = right6;
-
-
-        right2.left = left7;
-        right2.right = right8;
-
-
-        vbs1(root);
+        System.out.println(isBalanced(root));
 
 
     }

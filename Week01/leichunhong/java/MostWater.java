@@ -6,7 +6,7 @@ package Week01.leichunhong.java;
  *  装最多的水
  *  步骤：1.定义最大值max
  *       2.循环整个数组 初始值 i=0和j=length-1双端往中间走
- *       3.当a[i]<a[j]?a[i++]:a[j]--
+ *       3.当a[i]<a[j]?a[i++]:a[j--]
  *       4.return max
  * @author leichunhong
  * @create 2020-06-10
