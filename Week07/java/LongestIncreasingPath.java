@@ -72,6 +72,7 @@ public class LongestIncreasingPath {
         visited[i][j] = max + 1;
         return max + 1;
 
+
     }
 
 }

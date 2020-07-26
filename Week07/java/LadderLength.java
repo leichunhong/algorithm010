@@ -79,6 +79,7 @@ public class LadderLength {
             step++;
         }
 
+
         return 0;
     }
 }
