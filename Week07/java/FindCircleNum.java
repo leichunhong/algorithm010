@@ -132,6 +132,7 @@ public class FindCircleNum {
 
         public int count() {
             return count;
+
         }
     }
 
